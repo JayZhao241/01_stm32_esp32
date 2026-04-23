@@ -1,5 +1,5 @@
 #include "para.h"
-#include "stm32f4xx_hal_tim.h"
+#include "main.h"
 #include "tim.h"
 #include <stdint.h>
 

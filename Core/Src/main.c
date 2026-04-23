@@ -57,6 +57,12 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+#include <stdio.h>
+int __io_putchar(int ch) {
+HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
+return ch;
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -101,6 +107,18 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    if (DS18B20_Reset())
+    {
+      LED_Disp(1, 1);
+      printf("DS18B20 found\r\n");
+    }
+    else
+    {
+      LED_Disp(1, 0);
+      printf("DS18B20 not found\r\n");
+    }
+
+    HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }

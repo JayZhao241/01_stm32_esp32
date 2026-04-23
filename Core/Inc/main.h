@@ -38,6 +38,7 @@ extern "C" {
 #include "ds18b20.h"
 #include "para.h"
 
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
